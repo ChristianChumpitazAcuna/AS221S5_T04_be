@@ -1,16 +1,10 @@
 server:
   port: 8080
-  servlet:
-    context-path: /ClaudeAI
 spring:
-  datasource:
-    url: jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres
+  application:
+    name: ClaudeAI
+  r2dbc:
+    url: r2dbc:pool:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres
     username: postgres.fapeflbyihcviewrjreu
     password: ClaudeAIProject2024
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 

@@ -7,44 +7,50 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 import pe.edu.vallegrande.claude.model.Chat;
 import pe.edu.vallegrande.claude.repository.ChatRepository;
-
-
-import java.util.List;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 
 @Service
 public class ClaudeService {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private WebClient.Builder webClientBuilder;
 
     @Autowired
     private ChatRepository chatRepository;
 
-    public String sendMessage(String userContent) {
+    public Mono<String> sendMessage(String userContent) {
         HttpHeaders headers = createHeaders();
-        List<Chat> conversation = chatRepository.findAll();
-        JSONObject requestBody = createRequestBody(conversation, userContent);
+        Flux<Chat> conversation = chatRepository.findAll();
+        Mono<JSONObject> requestBody = createRequestBody(conversation, userContent);
 
-        // Create request entity
-        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody.toString(), headers);
+        return requestBody.flatMap(body -> {
 
-        // Send POST request
-        String response = restTemplate.postForObject("https://api.anthropic.com/v1/messages",
-                requestEntity, String.class);
+            // Create WebClient
+            WebClient webClient = webClientBuilder.defaultHeaders(httpHeaders ->
+                    httpHeaders.addAll(headers)).build();
 
-        // Parse response
-        String claudeResponse = new JSONObject(response).getJSONArray("content")
-                .getJSONObject(0).getString("text");
+            // Send request to Claude API
+            return webClient.post()
+                    .uri("https://api.anthropic.com/v1/messages")
+                    .bodyValue(body.toString())
+                    .retrieve()
+                    .bodyToMono(String.class)
+                    .flatMap(response -> {
 
-        String userMessage = new JSONObject(userContent).getString("message");
+                        // Parse response
+                        String claudeResponse = new JSONObject(response).getJSONArray("content")
+                                .getJSONObject(0).getString("text");
 
-        // Save chat in database
-        saveChat(userMessage, claudeResponse);
-
-        return claudeResponse;
+                        // Save chat in database and return response Claude
+                        return saveChat(userContent, claudeResponse)
+                                .thenReturn(claudeResponse);
+                    });
+        });
     }
 
     // Create headers
@@ -63,39 +69,41 @@ public class ClaudeService {
     }
 
     // Create request body
-    private JSONObject createRequestBody(List<Chat> conversation, String userContent) {
+    private Mono<JSONObject> createRequestBody(Flux<Chat> conversation, String userContent) {
 
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("model", "claude-3-opus-20240229");
-        requestBody.put("max_tokens", 1024);
+        return conversation.collectList().map(chats -> {
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("model", "claude-3-opus-20240229");
+            requestBody.put("max_tokens", 1024);
 
-        for (Chat chat : conversation) {
+            for (Chat chat : chats) {
+                JSONObject messageObject = new JSONObject();
+                messageObject.put("role", "user");
+                messageObject.put("content", chat.getMessage());
+                requestBody.append("messages", messageObject);
+
+                messageObject = new JSONObject();
+                messageObject.put("role", "assistant");
+                messageObject.put("content", chat.getResponse());
+                requestBody.append("messages", messageObject);
+            }
+
             JSONObject messageObject = new JSONObject();
             messageObject.put("role", "user");
-            messageObject.put("content", chat.getMessage());
+            messageObject.put("content", userContent);
+
+            // Add message to requestBody
             requestBody.append("messages", messageObject);
 
-            messageObject = new JSONObject();
-            messageObject.put("role", "assistant");
-            messageObject.put("content", chat.getResponse());
-            requestBody.append("messages", messageObject);
-        }
-
-        JSONObject messageObject = new JSONObject();
-        messageObject.put("role", "user");
-        messageObject.put("content", userContent);
-
-        // Add message to requestBody
-        requestBody.append("messages", messageObject);
-
-        return requestBody;
+            return requestBody;
+        });
     }
 
     // Save chat in database
-    private void saveChat(String userMessage, String claudeResponse) {
+    private Mono<Chat> saveChat(String userMessage, String claudeResponse) {
         Chat chat = new Chat();
         chat.setMessage(userMessage);
         chat.setResponse(claudeResponse);
-        chatRepository.save(chat);
+        return chatRepository.save(chat);
     }
 }

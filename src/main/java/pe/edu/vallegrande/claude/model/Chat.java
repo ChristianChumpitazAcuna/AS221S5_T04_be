@@ -1,22 +1,23 @@
 package pe.edu.vallegrande.claude.model;
 
-import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity
 @Table(name = "chat")
 @Getter
 @Setter
 public class Chat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(value = "id")
     private Long id;
 
-    @Column(name = "message")
+    @Column(value = "message")
     private String message;
 
-    @Column(name = "response")
+    @Column(value = "response")
     private String response;
 }

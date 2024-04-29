@@ -1,7 +1,9 @@
 package pe.edu.vallegrande.claude.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.stereotype.Repository;
 import pe.edu.vallegrande.claude.model.Chat;
 
-public interface ChatRepository extends JpaRepository<Chat, Long> {
+@Repository
+public interface ChatRepository extends ReactiveCrudRepository<Chat, Long> {
 }
