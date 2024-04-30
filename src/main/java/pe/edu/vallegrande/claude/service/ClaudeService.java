@@ -3,13 +3,11 @@ package pe.edu.vallegrande.claude.service;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpHeaders;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
-import pe.edu.vallegrande.claude.model.Chat;
-import pe.edu.vallegrande.claude.repository.ChatRepository;
+import pe.edu.vallegrande.claude.model.ClaudeChat;
+import pe.edu.vallegrande.claude.repository.ClaudeChatRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -21,11 +19,11 @@ public class ClaudeService {
     private WebClient.Builder webClientBuilder;
 
     @Autowired
-    private ChatRepository chatRepository;
+    private ClaudeChatRepository chatRepository;
 
     public Mono<String> sendMessage(String userContent) {
         HttpHeaders headers = createHeaders();
-        Flux<Chat> conversation = chatRepository.findAll();
+        Flux<ClaudeChat> conversation = chatRepository.findAll();
         Mono<JSONObject> requestBody = createRequestBody(conversation, userContent);
 
         return requestBody.flatMap(body -> {
@@ -43,8 +41,10 @@ public class ClaudeService {
                     .flatMap(response -> {
 
                         // Parse response
-                        String claudeResponse = new JSONObject(response).getJSONArray("content")
-                                .getJSONObject(0).getString("text");
+                        String claudeResponse = new JSONObject(response)
+                                .getJSONArray("content")
+                                .getJSONObject(0)
+                                .getString("text");
 
                         // Save chat in database and return response Claude
                         return saveChat(userContent, claudeResponse)
@@ -57,7 +57,7 @@ public class ClaudeService {
     private HttpHeaders createHeaders() {
         // Load API key from .env file
         Dotenv dotenv = Dotenv.load();
-        String apiKey = dotenv.get("API_KEY");
+        String apiKey = dotenv.get("CLAUDE_API_KEY");
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
@@ -69,14 +69,14 @@ public class ClaudeService {
     }
 
     // Create request body
-    private Mono<JSONObject> createRequestBody(Flux<Chat> conversation, String userContent) {
+    private Mono<JSONObject> createRequestBody(Flux<ClaudeChat> conversation, String userContent) {
 
         return conversation.collectList().map(chats -> {
             JSONObject requestBody = new JSONObject();
             requestBody.put("model", "claude-3-opus-20240229");
             requestBody.put("max_tokens", 1024);
 
-            for (Chat chat : chats) {
+            for (ClaudeChat chat : chats) {
                 JSONObject messageObject = new JSONObject();
                 messageObject.put("role", "user");
                 messageObject.put("content", chat.getMessage());
@@ -100,8 +100,8 @@ public class ClaudeService {
     }
 
     // Save chat in database
-    private Mono<Chat> saveChat(String userMessage, String claudeResponse) {
-        Chat chat = new Chat();
+    private Mono<ClaudeChat> saveChat(String userMessage, String claudeResponse) {
+        ClaudeChat chat = new ClaudeChat();
         chat.setMessage(userMessage);
         chat.setResponse(claudeResponse);
         return chatRepository.save(chat);
