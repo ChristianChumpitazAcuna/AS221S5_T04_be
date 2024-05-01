@@ -1,4 +1,4 @@
-package pe.edu.vallegrande.claude.service;
+package pe.edu.vallegrande.assistant.service;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.reactive.function.client.WebClient;
-import pe.edu.vallegrande.claude.model.ClaudeChat;
-import pe.edu.vallegrande.claude.repository.ClaudeChatRepository;
+import pe.edu.vallegrande.assistant.model.ClaudeChat;
+import pe.edu.vallegrande.assistant.repository.ClaudeChatRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

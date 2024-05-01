@@ -1,4 +1,4 @@
-package pe.edu.vallegrande.claude.config;
+package pe.edu.vallegrande.assistant.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.CorsRegistry;

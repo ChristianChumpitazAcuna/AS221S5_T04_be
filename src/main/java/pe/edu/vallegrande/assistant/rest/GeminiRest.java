@@ -1,10 +1,10 @@
-package pe.edu.vallegrande.claude.rest;
+package pe.edu.vallegrande.assistant.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.vallegrande.claude.model.GeminiChat;
-import pe.edu.vallegrande.claude.service.ChatService;
-import pe.edu.vallegrande.claude.service.GeminiService;
+import pe.edu.vallegrande.assistant.model.GeminiChat;
+import pe.edu.vallegrande.assistant.service.ChatService;
+import pe.edu.vallegrande.assistant.service.GeminiService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

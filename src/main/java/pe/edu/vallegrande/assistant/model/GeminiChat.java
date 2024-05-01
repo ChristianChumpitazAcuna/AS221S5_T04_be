@@ -1,4 +1,4 @@
-package pe.edu.vallegrande.claude.model;
+package pe.edu.vallegrande.assistant.model;
 
 
 import lombok.Getter;
@@ -7,10 +7,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(name = "claude")
+@Table(name = "gemini")
 @Getter
 @Setter
-public class ClaudeChat {
+public class GeminiChat {
     @Id
     @Column(value = "id")
     private Long id;

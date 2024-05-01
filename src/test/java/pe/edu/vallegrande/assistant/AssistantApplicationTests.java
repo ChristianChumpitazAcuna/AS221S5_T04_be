@@ -1,10 +1,10 @@
-package pe.edu.vallegrande.claude;
+package pe.edu.vallegrande.assistant;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClaudeApplicationTests {
+class AssistantApplicationTests {
 
 	@Test
 	void contextLoads() {

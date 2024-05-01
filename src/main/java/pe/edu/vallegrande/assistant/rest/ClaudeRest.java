@@ -1,15 +1,15 @@
-package pe.edu.vallegrande.claude.rest;
+package pe.edu.vallegrande.assistant.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.vallegrande.claude.model.ClaudeChat;
-import pe.edu.vallegrande.claude.service.ChatService;
-import pe.edu.vallegrande.claude.service.ClaudeService;
+import pe.edu.vallegrande.assistant.model.ClaudeChat;
+import pe.edu.vallegrande.assistant.service.ChatService;
+import pe.edu.vallegrande.assistant.service.ClaudeService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("ClaudeAI/chat")
+@RequestMapping("Claude/chat")
 public class ClaudeRest {
 
     @Autowired
