@@ -1,8 +1,10 @@
-API Cognitive Services - ChatBot
+# API Cognitive Services - ChatBot
+
 Servicio Cognitivo de anthropic, implementado para mantener una conversacion entre el cliente y el bot, es decir, si la persona manda algun tipo de consulta,el bot va a generar una respuesta adecuada con la consulta que
 se ha realizado.
 
-1. Cognitive Services
+---
+## 1. Cognitive Services
 
 -Antrophy - Build with the Claude API
 "Anthropy Build" es una plataforma que utiliza la API de Claude para desarrollar experiencias.Cuando una aplicación o un servicio web requiere acceso a una API, 
@@ -13,7 +15,6 @@ Un API key (clave de API) es un código único que se utiliza para identificar y
 <div style="text-align:center;">
     <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/dd5b15c8-feb0-4f20-ade7-ab4746cff5f0" alt="Get-Claude-api-access" width="600" height="320">
 </div>
-
 
 -Supabase
 Supabase utiliza claves de API para autenticar y asegurar el acceso a su servicioutiliza para autenticar las solicitudes de administración de la cuenta, como la creación 
@@ -31,6 +32,7 @@ confidencial para evitar accesos no autorizados a tu cuenta.
 <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/da8f681a-fbb6-4a3c-8db0-9992818a5fc8" alt="Get-Claude-api-access" width="800" height="400">
 </div>
 
+---
 
 -Java: JDK 17
 
@@ -38,8 +40,8 @@ confidencial para evitar accesos no autorizados a tu cuenta.
 
 -Maven: Apache Maven 3.6.3
 
-2. Maven Dependencias:
-   
+## 2. Maven Dependencias:
+
 -Lombok 1.18.20
 
 -jakarta.jakartaee-api ${jakarta.jakartaee-api.version}
