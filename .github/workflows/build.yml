@@ -47,7 +47,3 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/assistant:v1
-          build-args: |
-            CLAUDE_API_KEY=${{ secrets.CLAUDE_API_KEY }}
-            GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
-        
