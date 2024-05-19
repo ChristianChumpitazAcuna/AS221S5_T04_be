@@ -2,8 +2,8 @@
 FROM openjdk:17-jdk-alpine
 
 # Definir las variables con ARG
-ENV CLAUDE_API_KEY
-ENV GEMINI_API_KEY
+ENV CLAUDE_API_KEY=default
+ENV GEMINI_API_KEY=default
 
 # Variables de entorno para la aplicación
 ENV APP_HOME=/app
