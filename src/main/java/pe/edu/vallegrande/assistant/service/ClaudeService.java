@@ -3,6 +3,7 @@ package pe.edu.vallegrande.assistant.service;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -20,6 +21,9 @@ public class ClaudeService {
 
     @Autowired
     private ClaudeChatRepository chatRepository;
+
+    @Value("${CLAUDE_API_KEY}")
+    private String apiKey;
 
     public Mono<String> sendMessage(String userContent) {
         HttpHeaders headers = createHeaders();
@@ -55,10 +59,6 @@ public class ClaudeService {
 
     // Create headers
     private HttpHeaders createHeaders() {
-        // Load API key from .env file
-        Dotenv dotenv = Dotenv.load();
-        String apiKey = dotenv.get("CLAUDE_API_KEY");
-
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
         headers.set("x-api-key", apiKey);

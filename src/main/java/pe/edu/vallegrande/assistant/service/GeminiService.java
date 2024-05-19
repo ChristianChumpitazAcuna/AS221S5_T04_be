@@ -3,6 +3,7 @@ package pe.edu.vallegrande.assistant.service;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import pe.edu.vallegrande.assistant.model.GeminiChat;
@@ -19,14 +20,13 @@ public class GeminiService {
     @Autowired
     private GeminiChatRepository geminiChatRepository;
 
+    @Value("${GEMINI_API_KEY}")
+    private String apiKey;
+
     // method sendMessage
     public Mono<String> sendMessage(String userContent) {
         Flux<GeminiChat> conversation = geminiChatRepository.findAll();
         Mono<JSONObject> requestBody = createRequestBody(conversation, userContent);
-
-        // Load API key
-        Dotenv dotenv = Dotenv.configure().load();
-        String apiKey = dotenv.get("GEMINI_API_KEY");
 
         return requestBody.flatMap(body -> {
             WebClient webClient = webClientBuilder.build();

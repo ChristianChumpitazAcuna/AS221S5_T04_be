@@ -1,6 +1,10 @@
 # Usar una imagen base de Java
 FROM openjdk:17-jdk-alpine
 
+# Definir las variables con ARG
+ARG CLAUDE_API_KEY
+ARG GEMINI_API_KEY
+
 # Variables de entorno para la aplicación
 ENV APP_HOME=/app
 
@@ -10,9 +14,6 @@ WORKDIR $APP_HOME
 
 # Copiar el archivo jar del proyecto al contenedor
 COPY target/assistant-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
-
-# Copiar el archivo .env del proyecto al contenedor
-COPY .env $APP_HOME/.env
 
 # Exponer el puerto de la aplicación
 EXPOSE 8080
