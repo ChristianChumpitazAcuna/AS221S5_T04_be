@@ -7,4 +7,3 @@ spring:
     url: r2dbc:pool:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres
     username: postgres.fapeflbyihcviewrjreu
     password: ClaudeAIProject2024
-

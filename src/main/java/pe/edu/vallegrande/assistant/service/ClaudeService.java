@@ -1,6 +1,5 @@
 package pe.edu.vallegrande.assistant.service;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
