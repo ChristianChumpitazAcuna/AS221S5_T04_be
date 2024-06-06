@@ -20,7 +20,7 @@ public class GeminiRest {
     private ChatService chatService;
 
     @GetMapping("/actives/{userId}")
-    public Flux<GeminiChat> findActives (@PathVariable Long userId) {
+    public Flux<GeminiChat> findActives(@PathVariable Long userId) {
         return chatService.findAllGemini(userId, "A");
     }
 
@@ -34,9 +34,9 @@ public class GeminiRest {
         return geminiService.sendMessage(userId, userMessage);
     }
 
-    @PutMapping("/update/{id}")
-    public Mono<String> update(@PathVariable Long id, @RequestBody String userMessage) {
-        return geminiService.updateChat(id, userMessage);
+    @PutMapping("/update/{userId}/{id}")
+    public Mono<String> update(@PathVariable Long id, @PathVariable Long userId, @RequestBody String userMessage) {
+        return geminiService.updateSendMessage(id, userId, userMessage);
     }
 
     @DeleteMapping("/delete/{id}")
