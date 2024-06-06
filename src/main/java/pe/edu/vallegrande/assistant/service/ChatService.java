@@ -22,8 +22,8 @@ public class ChatService {
         return chatRepository.findAll();
     }
 
-    public Flux<GeminiChat> findAllGemini() {
-        return geminiChatRepository.findAll();
+    public Flux<GeminiChat> findAllGemini(Long userId, String status) {
+        return geminiChatRepository.findByUserIdAndStatusOrderById(userId, status);
     }
 }
 

@@ -20,4 +20,10 @@ public class GeminiChat {
 
     @Column(value = "response")
     private String response;
+
+    @Column(value = "status")
+    private String status;
+
+    @Column(value = "user_id")
+    private Long userId;
 }

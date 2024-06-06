@@ -23,9 +23,10 @@ public class GeminiService {
     private String apiKey;
 
     // method sendMessage
-    public Mono<String> sendMessage(String userContent) {
-        Flux<GeminiChat> conversation = geminiChatRepository.findAll();
-        Mono<JSONObject> requestBody = createRequestBody(conversation, userContent);
+    public Mono<String> sendMessage(Long userId, String userMessage) {
+        Flux<GeminiChat> conversation = geminiChatRepository.findByUserIdAndStatusOrderById(userId, "A");
+
+        Mono<JSONObject> requestBody = createRequestBody(conversation, userMessage);
 
         return requestBody.flatMap(body -> {
             WebClient webClient = webClientBuilder.build();
@@ -47,7 +48,7 @@ public class GeminiService {
                                 .getString("text");
 
                         // Save chat in database and return response Gemini
-                        return saveChat(userContent, geminiResponse)
+                        return saveChat(userMessage, geminiResponse, userId)
                                 .thenReturn(geminiResponse);
                     });
         });
@@ -55,7 +56,7 @@ public class GeminiService {
     }
 
     // method create request body
-    private Mono<JSONObject> createRequestBody(Flux<GeminiChat> conversation, String userContent) {
+    private Mono<JSONObject> createRequestBody(Flux<GeminiChat> conversation, String userMessage) {
 
         return conversation.collectList().map(chats -> {
             JSONObject requestBody = new JSONObject();
@@ -83,7 +84,7 @@ public class GeminiService {
 
             JSONObject messageObject = new JSONObject();
             messageObject.put("role", "user");
-            messageObject.put("parts", new JSONObject().put("text", userContent));
+            messageObject.put("parts", new JSONObject().put("text", userMessage));
 
             requestBody.append("contents", messageObject);
 
@@ -92,10 +93,29 @@ public class GeminiService {
 
     }
 
-    private Mono<GeminiChat> saveChat(String userContent, String geminiResponse) {
+    private Mono<GeminiChat> saveChat(String userMessage, String geminiResponse, Long userId) {
         GeminiChat chat = new GeminiChat();
-        chat.setMessage(userContent);
+        chat.setMessage(userMessage);
         chat.setResponse(geminiResponse);
+        chat.setUserId(userId);
         return geminiChatRepository.save(chat);
+    }
+
+    public Mono<String> updateChat(Long id, String userMessageUpdate) {
+        return geminiChatRepository.findById(id)
+                .flatMap(chat -> {
+                    chat.setMessage(userMessageUpdate);
+                    chat.setResponse("");
+                    return geminiChatRepository.save(chat)
+                            .flatMap(savedChat -> sendMessage(chat.getUserId(), userMessageUpdate));
+                });
+    }
+
+    public Mono<GeminiChat> changeStatus(Long id, String status) {
+        return geminiChatRepository.findById(id)
+                .flatMap(chat -> {
+                    chat.setStatus(status);
+                    return geminiChatRepository.save(chat);
+                });
     }
 }
