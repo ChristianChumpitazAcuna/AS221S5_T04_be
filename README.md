@@ -26,7 +26,7 @@ Para poder emplear los servicio de Gemini de Microsoft.Es importante seguir esto
 
 _¡Listo! Ahora tienes tu api key de Gemini para ser utilizado en tu aplicación._
 
-![Chatbot](https://photos.app.goo.gl/NCbstB1hKRYJUFFNA)
+![Chatbot](https://www.dropbox.com/scl/fi/e48w1ru81fph9ojfps8u5/API-KEY.png?rlkey=jbmq6ijpvvxyncalo802ifd5p&st=u5vkzr1u&dl=0)
 
 -Antrophy - Build with the Claude API
 "Anthropy Build" es una plataforma que utiliza la API de Claude para desarrollar experiencias.Cuando una aplicación o un servicio web requiere acceso a una API, 
