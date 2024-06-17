@@ -62,6 +62,7 @@ _En el archivo application.yml configuramos lo necesario para la conexion a la b
 ```
 _Supabase utiliza claves de API para autenticar y asegurar el acceso a su servicioutiliza para autenticar las solicitudes de administración de la cuenta, como la creación de tablas y la gestión de usuarios, mientras que las claves de API específicas se pueden generar para acceder a bases de datos específicas._
 
+
 <div style="text-align:center;">
 <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/9c624f92-cf94-42fb-89f9-bd6c8ee04c6b" alt="Get-Claude-api-access" width="800" height="210">
 </div>
