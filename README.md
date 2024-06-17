@@ -107,11 +107,13 @@ confidencial para evitar accesos no autorizados a tu cuenta._
 
 ---
 ### 3. APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
--Java: JDK 17
+> ***-Java: JDK 17
 
 -IDE: Intellij idea IDE 
 
--Maven: Apache Maven 3.6.3
+-Maven: Apache Maven 3.6.3.***
+
+
 
 # AUTORES 🧑‍💻
 [![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
