@@ -24,7 +24,7 @@ Para poder emplear los servicio de Gemini de Microsoft.Es importante seguir esto
 3. _Haz clic en "Obtener una clave de API" y esto te enviara a una pagina donde generaras el servicio._
 4. _Finalmente, confirma la genera la clave del API._
 
-_¡Listo! Ahora tienes tu servicio cognitivo de Azure listo para ser utilizado en tu aplicación._
+_¡Listo! Ahora tienes tu api key de Gemini para ser utilizado en tu aplicación._
 
 ![Chatbot](https://imgur.com/gallery/api-key-9b9lqp6)
 -Antrophy - Build with the Claude API
