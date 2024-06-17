@@ -67,7 +67,7 @@ _Supabase utiliza claves de API para autenticar y asegurar el acceso a su servic
 <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/9c624f92-cf94-42fb-89f9-bd6c8ee04c6b" alt="Supabase" width="800" height="210">
 </div>
 
-## CONEXIÓN A UNA BASE DE DATOS NUBE POSTGRESQL EN SUPABASE 🔐
+### 2.CONEXIÓN A UNA BASE DE DATOS NUBE POSTGRESQL EN SUPABASE 🔐
 
  _Utilizamos una base de datos PostgreSQL en la nube proporcionada por Supabase para almacenar datos de manera segura. A continuación, se detallan los pasos para configurar la conexión a esta base de datos:_
  
@@ -106,7 +106,7 @@ confidencial para evitar accesos no autorizados a tu cuenta._
 </div>
 
 ---
-### APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
+### 3. APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
 -Java: JDK 17
 
 -IDE: Intellij idea IDE 
