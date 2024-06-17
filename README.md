@@ -113,16 +113,6 @@ confidencial para evitar accesos no autorizados a tu cuenta._
 
 -Maven: Apache Maven 3.6.3
 
-## 2. Maven Dependencias:
-
--Lombok 1.18.20
-
--jakarta
-
--okhttp 4.2.2
-
--json 20160810
-
 # AUTORES 🧑‍💻
 [![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
 [![Christian Chumpitaz Acuña](https://img.shields.io/badge/GitHub-Christian%20Chumpitaz%20Acuña-blue?logo=github)](https://github.com/ChristianChumpitazAcuna)
