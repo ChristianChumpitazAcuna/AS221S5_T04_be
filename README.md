@@ -32,13 +32,40 @@ _¡Listo! Ahora tienes tu api key de Gemini para ser utilizado en tu aplicación
     <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/dd5b15c8-feb0-4f20-ade7-ab4746cff5f0" alt="Get-Claude-api-access" width="600" height="320">
 </div>
 
--Supabase
-Supabase utiliza claves de API para autenticar y asegurar el acceso a su servicioutiliza para autenticar las solicitudes de administración de la cuenta, como la creación 
-de tablas y la gestión de usuarios, mientras que las claves de API específicas se pueden generar para acceder a bases de datos específicas.
+1. **Agregar dependencias**:
+
+_Agregamos las dependencias necesarias para R2DBC y Spring Web_
+  ```
+  <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.3</version>
+  </dependency>
+  <dependency>
+       <groupId>org.postgresql</groupId>
+       <artifactId>r2dbc-postgresql</artifactId>
+       <scope>runtime</scope>
+  </dependency>    
+  ```
+2. **Configurar la conexión a la base de datos**:
+   
+_En el archivo application.yml configuramos lo necesario para la conexion a la base de datos._
+```
+       server:
+        port: 8080
+    
+    spring:
+        r2dbc:
+            url: r2dbc:pool:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres
+            username: postgres.fapeflbyihcviewrjreu
+            password: ************************
+
+_Supabase utiliza claves de API para autenticar y asegurar el acceso a su servicioutiliza para autenticar las solicitudes de administración de la cuenta, como la creación de tablas y la gestión de usuarios, mientras que las claves de API específicas se pueden generar para acceder a bases de datos específicas._
 
 <div style="text-align:center;">
 <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/9c624f92-cf94-42fb-89f9-bd6c8ee04c6b" alt="Get-Claude-api-access" width="800" height="210">
 </div>
+
 -Gemini
 Gemini, puedes generar claves de API que te permitirán interactuar con su API y realizar operaciones automatizadas, como la colocación de órdenes , la obtención de información.
 La clave pública se utiliza para identificar tu cuenta y es segura de compartir, mientras que la clave privada se utiliza para firmar tus solicitudes y debe mantenerse 
