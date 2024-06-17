@@ -59,7 +59,7 @@ _En el archivo application.yml configuramos lo necesario para la conexion a la b
             url: r2dbc:pool:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres
             username: postgres.fapeflbyihcviewrjreu
             password: ************************
-
+```
 _Supabase utiliza claves de API para autenticar y asegurar el acceso a su servicioutiliza para autenticar las solicitudes de administración de la cuenta, como la creación de tablas y la gestión de usuarios, mientras que las claves de API específicas se pueden generar para acceder a bases de datos específicas._
 
 <div style="text-align:center;">
