@@ -1,8 +1,11 @@
-# API Cognitive Services - ChatBot
-
-Servicio Cognitivo de anthropic, implementado para mantener una conversacion entre el cliente y el bot, es decir, si la persona manda algun tipo de consulta,el bot va a generar una respuesta adecuada con la consulta que
-se ha realizado.
-
+# API Cognitive Services - GEMINI
+# SERVICIO COGNITIVO CHATBOT 📚
+ 
+  > ***Servicio Cognitivo de Gemini, implementado para establecer una conversacion entre el cliente y el bot, es decir, si la persona manda algun tipo de consulta,el bot va a generar una respuesta adecuada con la consulta que se ha realizado. .***
+# AUTORES 🧑‍💻
+[![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
+[![Christian Chumpitaz Acuña](https://img.shields.io/badge/GitHub-Christian%20Chumpitaz%20Acuña-blue?logo=github)](https://github.com/ChristianChumpitazAcuna)
+[![Hebert Rivera Perez](https://img.shields.io/badge/GitHub-Hebert%20Rivera%20Perez-blue?logo=github)](https://github.com/Harp09)
 ---
 ## 1. Cognitive Services
 
