@@ -108,7 +108,9 @@ confidencial para evitar accesos no autorizados a tu cuenta._
 ---
 ### 3. APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
 > ***-Java: JDK 17***
+
 > ***-IDE: Intellij idea IDE***
+
 > ***-Maven: Apache Maven 3.6.3***
 
 # AUTORES 🧑‍💻
