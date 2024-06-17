@@ -14,8 +14,20 @@
 -&#160; ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat&logo=apache-maven&link=hhttps://github.com/Quananhle/Java-Web-Developer)
 -&#160;![Git](https://img.shields.io/badge/-Git-black?style=flat&logo=git&link=https://github.com/Quananhle)
 -&#160;![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
-## 1. Cognitive Services
 
+## CREACIÓN EL SERVICIO CHATBOT
+### 1. API KEY - GEMINI 💻
+
+Para poder emplear los servicio de Gemini de Microsoft.Es importante seguir estos pasos:_
+
+1. _Inicia sesión en tu cuenta de google._
+2. _Investiga en tu navegador acerca del Api Key Gemini._
+3. _Haz clic en "Obtener una clave de API" y esto te enviara a una pagina donde generaras el servicio._
+4. _Finalmente, confirma la genera la clave del API._
+
+_¡Listo! Ahora tienes tu servicio cognitivo de Azure listo para ser utilizado en tu aplicación._
+
+![Chatbot](https://imgur.com/a/9b9lqp6)
 -Antrophy - Build with the Claude API
 "Anthropy Build" es una plataforma que utiliza la API de Claude para desarrollar experiencias.Cuando una aplicación o un servicio web requiere acceso a una API, 
 generalmente se le asigna una clave de API única. Esta clave se utiliza en las solicitudes a la API para autenticar al usuario o a la aplicación y para rastrear 
