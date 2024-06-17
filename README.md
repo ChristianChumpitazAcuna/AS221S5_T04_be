@@ -27,7 +27,7 @@ Para poder emplear los servicio de Gemini de Microsoft.Es importante seguir esto
 
 _¡Listo! Ahora tienes tu servicio cognitivo de Azure listo para ser utilizado en tu aplicación._
 
-![Chatbot](https://i.imgur.com/9b9lqp6.png)
+![Chatbot](https://imgur.com/gallery/api-key-9b9lqp6)
 -Antrophy - Build with the Claude API
 "Anthropy Build" es una plataforma que utiliza la API de Claude para desarrollar experiencias.Cuando una aplicación o un servicio web requiere acceso a una API, 
 generalmente se le asigna una clave de API única. Esta clave se utiliza en las solicitudes a la API para autenticar al usuario o a la aplicación y para rastrear 
