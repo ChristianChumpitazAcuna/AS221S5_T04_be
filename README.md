@@ -2,11 +2,18 @@
 ## SERVICIO COGNITIVO CHATBOT 📚
  
   > ***Servicio Cognitivo de Gemini, implementado para establecer una conversacion entre el cliente y el bot, es decir, si la persona manda algun tipo de consulta,el bot va a generar una respuesta adecuada con la consulta que se ha realizado. .***
-# AUTORES 🧑‍💻
-[![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
-[![Christian Chumpitaz Acuña](https://img.shields.io/badge/GitHub-Christian%20Chumpitaz%20Acuña-blue?logo=github)](https://github.com/ChristianChumpitazAcuna)
-[![Hebert Rivera Perez](https://img.shields.io/badge/GitHub-Hebert%20Rivera%20Perez-blue?logo=github)](https://github.com/Harp09)
+
 ---
+## LENGUAJES Y HERRAMIENTAS 💻
+
+-  &#160;![Spring](http://img.shields.io/badge/-Spring-6DB33F?style=flat&logo=spring&logoColor=ffffff)
+-  &#160;![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+-  &#160; ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
+-  &#160; ![Gemini](https://img.shields.io/badge/Gemini-316192?style=flat&logo=gemini&logoColor=white)
+- &#160; ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+- &#160; ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat&logo=apache-maven&link=hhttps://github.com/Quananhle/Java-Web-Developer)
+-  &#160;![Git](https://img.shields.io/badge/-Git-black?style=flat&logo=git&link=https://github.com/Quananhle)
+-  &#160;![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 ## 1. Cognitive Services
 
 -Antrophy - Build with the Claude API
@@ -52,3 +59,8 @@ confidencial para evitar accesos no autorizados a tu cuenta.
 -okhttp 4.2.2
 
 -json 20160810
+
+# AUTORES 🧑‍💻
+[![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
+[![Christian Chumpitaz Acuña](https://img.shields.io/badge/GitHub-Christian%20Chumpitaz%20Acuña-blue?logo=github)](https://github.com/ChristianChumpitazAcuna)
+[![Hebert Rivera Perez](https://img.shields.io/badge/GitHub-Hebert%20Rivera%20Perez-blue?logo=github)](https://github.com/Harp09)
