@@ -12,7 +12,6 @@
 -&#160;![Gemini](https://img.shields.io/badge/Gemini-00DCFA?style=flat&logoColor=white&labelColor=00DCFA&logoWidth=20&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFklEQVR42mL8//8/AwAIgbA5j4URIBPzBwCJ8yMlPgG+ENoG2hyyGyGgD6P8ZKIrHwGE4TgCrBTKdkRgg/IjNxBOEC0E7I3lQ6J+mAp5C6kGe0PsoD1QC7P6kniTQzsgTktR+hhsINmFgTlohl+pB10E5HZZBvTkg7nZhF3ySx/gaOjo6hpZGRQwFY0YhE0NoIgPqqwLK6UAc3YxmGm5QCrZtQmiqgBbLZmNG2dQGpXWg9nLSBxyqkNsHVUgG0dhDMWsQdlI8FEX2CkllAem/2QKgE0uLYE5f8gPCKUIOSF1AsMclNsQ5gOm9BEOB6UIbKiPipbgUouHDEZQQ5UIF7JTofgSR4FgNOocIBk1uC0XGVCF4UkkzF0soF80Qe50F3YChRiABDyx9BXplrUgAAAABJRU5ErkJggg==)
 -&#160; ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 -&#160; ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat&logo=apache-maven&link=hhttps://github.com/Quananhle/Java-Web-Developer)
--&#160;![Git](https://img.shields.io/badge/-Git-black?style=flat&logo=git&link=https://github.com/Quananhle)
 -&#160;![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 
 ## CREACIÓN EL SERVICIO CHATBOT
