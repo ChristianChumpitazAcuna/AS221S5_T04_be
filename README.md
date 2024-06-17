@@ -64,21 +64,50 @@ _Supabase utiliza claves de API para autenticar y asegurar el acceso a su servic
 
 
 <div style="text-align:center;">
-<img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/9c624f92-cf94-42fb-89f9-bd6c8ee04c6b" alt="Get-Claude-api-access" width="800" height="210">
+<img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/9c624f92-cf94-42fb-89f9-bd6c8ee04c6b" alt="Supabase" width="800" height="210">
 </div>
 
+## CONEXIÓN A UNA BASE DE DATOS NUBE POSTGRESQL EN SUPABASE 🔐💾
+
+ _Utilizamos una base de datos PostgreSQL en la nube proporcionada por Supabase para almacenar datos de manera segura. A continuación, se detallan los pasos para configurar la conexión a esta base de datos:_
+ 
+1. **Registro en Supabase**:
+   
+  _Accede al sitio web de Supabase y [regístrate](https://supabase.com/dashboard/sign-up) para obtener una cuenta si aún no tienes una.Lo recomendable es iniciar con una cuenta de Github_
+
+3. **Creación de un proyecto**:
+   
+  _Después de iniciar sesión, crea un nuevo proyecto en Supabase donde se menciona New Project.Para luego elegir una organizacion_
+
+5. **Agregar una base de datos PostgreSQL**:
+   
+  _Una vez dentro del proyecto, completamos con los datos necesarios para la creacion en Supabase._
+  _Elegimos la region que deseamos , lo optimo seria el que se encuentra mas cerca._
+  _Configura las opciones según tus necesidades (tamaño de la base de datos, región, etc.) y luego le damos click en crear el proyecto._
+
+7. **Obtención de las credenciales de la base de datos**:
+   
+  _Una vez que la base de datos esté creada, haz clic en connect y se abrira una ventana._
+  _Encuentra las credenciales de conexión, que generalmente incluyen el host, el puerto, el nombre de usuario y la contraseña._
+
+9. **Configuración en el proyecto**
+    
+_Abre el archivo de configuración del proyecto application.yml y realiza la conexion a la base de datos._
+
+_Una vez que hayas completado estos pasos, tu aplicación estará configurada para conectarse a la base de datos PostgreSQL en la nube en Railway._
+
 -Gemini
-Gemini, puedes generar claves de API que te permitirán interactuar con su API y realizar operaciones automatizadas, como la colocación de órdenes , la obtención de información.
+_Gemini, puedes generar claves de API que te permitirán interactuar con su API y realizar operaciones automatizadas, como la colocación de órdenes , la obtención de información.
 La clave pública se utiliza para identificar tu cuenta y es segura de compartir, mientras que la clave privada se utiliza para firmar tus solicitudes y debe mantenerse 
-confidencial para evitar accesos no autorizados a tu cuenta.
+confidencial para evitar accesos no autorizados a tu cuenta._
 
 <div style="text-align:center;">
 <img src="https://github.com/ChristianChumpitazAcuna/Assistant/assets/111783609/da8f681a-fbb6-4a3c-8db0-9992818a5fc8" alt="Get-Claude-api-access" width="800" height="400">
 </div>
 
 ---
-
--Java: JDK 17
+### APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
+_-Java: JDK 17
 
 -IDE: Intellij idea IDE 
 
@@ -92,7 +121,7 @@ confidencial para evitar accesos no autorizados a tu cuenta.
 
 -okhttp 4.2.2
 
--json 20160810
+-json 20160810_
 
 # AUTORES 🧑‍💻
 [![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
