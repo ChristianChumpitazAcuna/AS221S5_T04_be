@@ -107,7 +107,7 @@ confidencial para evitar accesos no autorizados a tu cuenta._
 
 ---
 ### APLICACIONES Y ARCHIVOS RECOMENDADOS 💻
-_-Java: JDK 17
+-Java: JDK 17
 
 -IDE: Intellij idea IDE 
 
@@ -117,11 +117,11 @@ _-Java: JDK 17
 
 -Lombok 1.18.20
 
--jakarta.jakartaee-api ${jakarta.jakartaee-api.version}
+-jakarta
 
 -okhttp 4.2.2
 
--json 20160810_
+-json 20160810
 
 # AUTORES 🧑‍💻
 [![Amir Arbieto Contreras](https://img.shields.io/badge/GitHub-Amir%20Arbierto%20Contreras-blue?logo=github)](https://github.com/AmirArbieto)
