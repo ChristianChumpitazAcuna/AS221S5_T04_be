@@ -1,5 +1,5 @@
 # API Cognitive Services - GEMINI
-# SERVICIO COGNITIVO CHATBOT 📚
+## SERVICIO COGNITIVO CHATBOT 📚
  
   > ***Servicio Cognitivo de Gemini, implementado para establecer una conversacion entre el cliente y el bot, es decir, si la persona manda algun tipo de consulta,el bot va a generar una respuesta adecuada con la consulta que se ha realizado. .***
 # AUTORES 🧑‍💻
