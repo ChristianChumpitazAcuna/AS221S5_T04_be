@@ -8,6 +8,8 @@ import pe.edu.vallegrande.assistant.repository.ClaudeChatRepository;
 import pe.edu.vallegrande.assistant.repository.GeminiChatRepository;
 import reactor.core.publisher.Flux;
 
+import java.util.UUID;
+
 
 @Service
 public class ChatService {
@@ -22,7 +24,7 @@ public class ChatService {
         return chatRepository.findAll();
     }
 
-    public Flux<GeminiChat> findAllGemini(Long userId, String status) {
+    public Flux<GeminiChat> findAllGemini(UUID userId, String status) {
         return geminiChatRepository.findByUserIdAndStatusOrderById(userId, status);
     }
 }

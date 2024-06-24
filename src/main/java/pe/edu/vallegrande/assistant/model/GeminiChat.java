@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.util.UUID;
+
 @Table(name = "gemini")
 @Getter
 @Setter
@@ -25,5 +27,5 @@ public class GeminiChat {
     private String status;
 
     @Column(value = "user_id")
-    private Long userId;
+    private UUID userId;
 }

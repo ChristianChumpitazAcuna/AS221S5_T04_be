@@ -9,6 +9,8 @@ import pe.edu.vallegrande.assistant.service.GeminiService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("Gemini")
 public class GeminiRest {
@@ -20,17 +22,17 @@ public class GeminiRest {
     private ChatService chatService;
 
     @GetMapping("/{status}/{userId}")
-    public ResponseEntity<Flux<GeminiChat>> findAll(@PathVariable Long userId, @PathVariable String status) {
+    public ResponseEntity<Flux<GeminiChat>> findAll(@PathVariable UUID userId, @PathVariable String status) {
         return ResponseEntity.ok(chatService.findAllGemini(userId, status));
     }
 
     @PostMapping("/sendMessage/{userId}")
-    public ResponseEntity<Mono<String>> save(@PathVariable Long userId, @RequestBody String userMessage) {
+    public ResponseEntity<Mono<String>> save(@PathVariable UUID userId, @RequestBody String userMessage) {
         return ResponseEntity.ok(geminiService.sendMessage(userId, userMessage));
     }
 
     @PutMapping("/update/{userId}/{id}")
-    public ResponseEntity<Mono<String>> update(@PathVariable Long id, @PathVariable Long userId, @RequestBody String userMessage) {
+    public ResponseEntity<Mono<String>> update(@PathVariable Long id, @PathVariable UUID userId, @RequestBody String userMessage) {
         return ResponseEntity.ok(geminiService.updateSendMessage(id, userId, userMessage));
     }
 

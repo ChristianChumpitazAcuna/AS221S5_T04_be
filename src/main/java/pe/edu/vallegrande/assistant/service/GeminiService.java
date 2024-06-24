@@ -10,6 +10,8 @@ import pe.edu.vallegrande.assistant.repository.GeminiChatRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @Service
 public class GeminiService {
 
@@ -23,7 +25,7 @@ public class GeminiService {
     private String apiKey;
 
     // method sendMessage
-    public Mono<String> sendMessage(Long userId, String userMessage) {
+    public Mono<String> sendMessage(UUID userId, String userMessage) {
         Flux<GeminiChat> conversation = geminiChatRepository.findByUserIdAndStatusOrderById(userId, "A");
         Mono<JSONObject> requestBody = createRequestBody(conversation, userMessage);
 
@@ -52,7 +54,7 @@ public class GeminiService {
 
     }
 
-    public Mono<String> updateSendMessage(Long id, Long userId, String userMessage) {
+    public Mono<String> updateSendMessage(Long id, UUID userId, String userMessage) {
         Mono<GeminiChat> conversation = geminiChatRepository.findByIdAndUserIdAndStatus(id, userId, "A");
         JSONObject requestBody = createRequestBodyUpdated(userMessage);
 
@@ -139,7 +141,7 @@ public class GeminiService {
         return requestBody;
     }
 
-    private Mono<GeminiChat> saveChat(Long userId, String userMessage, String geminiResponse) {
+    private Mono<GeminiChat> saveChat(UUID userId, String userMessage, String geminiResponse) {
         GeminiChat chat = new GeminiChat();
         chat.setUserId(userId);
         chat.setMessage(userMessage);
